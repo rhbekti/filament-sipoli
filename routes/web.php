@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\TicketController;
+use App\Livewire\DisplayTicket;
+use App\Livewire\Ticket;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [TicketController::class, 'index'])->name('tickets.index');
-Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
+Route::get('/', DisplayTicket::class)->name('display');
+Route::get('/antrian', Ticket::class)->name('antrian');
